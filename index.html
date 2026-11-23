@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah's Bouquet</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');');
+
+* {
+    margin: 50;
+    padding: 50;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background: radial-gradient(circle, #64152e, #210611 75%);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background glow */
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #e83e70;
+    filter: blur(150px);
+    opacity: 0.25;
+    border-radius: 50%;
+}
+
+/* Bouquet */
+.bouquet {
+    position: relative;
+    width: 440px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float 4s ease-in-out infinite;
+    transform-origin: center;
+}
+.bouquet {
+    position: relative;
+    width: 440px;
+    height: 500px;
+}
+/* Flower stems */
+.stems {
+    position: absolute;
+    top: 130px;
+    width: 5px;
+    height: 190px;
+    background: #386b3b;
+    transform: rotate(-8deg);
+    border-radius: 10px;
+}
+
+.stems::before,
+.stems::after {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 22px;
+    background: #47834b;
+    border-radius: 100% 0 100% 0;
+}
+
+.stems::before {
+    top: 80px;
+    left: -55px;
+    transform: rotate(-25deg);
+}
+
+.stems::after {
+    top: 120px;
+    left: 0;
+    transform: rotate(25deg);
+}
+
+/* Rose arrangement */
+
+/* Realistic rose bouquet */
+
+
+
+.roses {
+    position: absolute;
+    top: 5px;
+    width: 390px;
+    height: 325px;
+    z-index: 2;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,.4));
+}
+
+.roses svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Premium layered bouquet wrapping */
+.wrapper {
+    position: absolute;
+    top: 265px;
+    width: 350px;
+    height: 225px;
+    z-index: 3;
+
+    background:
+        linear-gradient(
+            105deg,
+            #260512 0%,
+            #581027 15%,
+            #9b3457 32%,
+            #64152f 48%,
+            #a33c60 65%,
+            #4c0c25 83%,
+            #22040f 100%
+        );
+
+    clip-path: polygon(
+        3% 0,
+        97% 0,
+        100% 12%,
+        77% 100%,
+        50% 78%,
+        23% 100%,
+        0 12%
+    );
+
+    filter: drop-shadow(0 15px 14px rgba(0,0,0,.65));
+}
+
+/* Satin-like paper highlights */
+.wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            105deg,
+            transparent 10%,
+            rgba(255,255,255,.20) 22%,
+            transparent 35%
+        ),
+        linear-gradient(
+            260deg,
+            transparent 45%,
+            rgba(255,190,210,.18) 58%,
+            transparent 72%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.25),
+            transparent 30%,
+            rgba(255,255,255,.08) 50%,
+            transparent 75%,
+            rgba(0,0,0,.3)
+        );
+}
+
+/* Natural folded paper creases */
+.wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            75deg,
+            transparent 25%,
+            rgba(20,0,10,.4) 26%,
+            transparent 29%
+        ),
+        linear-gradient(
+            -75deg,
+            transparent 68%,
+            rgba(255,190,210,.2) 69%,
+            transparent 73%
+        ),
+        linear-gradient(
+            180deg,
+            transparent 65%,
+            rgba(0,0,0,.22)
+        );
+}
+.wrapper-layer {
+    position: absolute;
+    top: 250px;
+    width: 370px;
+    height: 240px;
+    z-index: 2;
+
+    background: linear-gradient(
+        125deg,
+        #4a0b22,
+        #b34b70,
+        #701a3b,
+        #330817
+    );
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        88% 100%,
+        50% 76%,
+        12% 100%
+    );
+
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,.5));
+}
+/* Ribbon bow position */
+
+
+/* Two big ribbon loops
+/* REALISTIC PINK SATIN RIBBON */
+.ribbon {
+    position: absolute;
+    top: 340px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 75px;
+    z-index: 10;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* LEFT BOW LOOP */
+.ribbon::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 0;
+    width: 85px;
+    height: 55px;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #f7b0c6 30%,
+        #d94f7c 65%,
+        #ffcfdd
+    );
+    border-radius: 80% 15% 75% 20%;
+    transform: rotate(20deg);
+    box-shadow:
+        inset 4px 4px 8px rgba(255,255,255,.7),
+        inset -5px -5px 8px rgba(100,0,35,.3),
+        0 4px 8px rgba(0,0,0,.3);
+}
+
+/* RIGHT BOW LOOP */
+.ribbon::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 0;
+    width: 85px;
+    height: 55px;
+    background: linear-gradient(
+        225deg,
+        #fff0f5,
+        #f7b0c6 30%,
+        #d94f7c 65%,
+        #ffcfdd
+    );
+    border-radius: 15% 80% 20% 75%;
+    transform: rotate(-20deg);
+    box-shadow:
+        inset -4px 4px 8px rgba(255,255,255,.7),
+        inset 5px -5px 8px rgba(100,0,35,.3),
+        0 4px 8px rgba(0,0,0,.3);
+}
+
+/* RIBBON TAILS */
+.ribbon-tails {
+    position: absolute;
+    top: 375px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 100px;
+    z-index: 9;
+}
+
+.ribbon-tails::before,
+.ribbon-tails::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 38px;
+    height: 95px;
+    background: linear-gradient(
+        90deg,
+        #a72d55,
+        #f8b6ca 35%,
+        #ffe4ec 55%,
+        #d85b83 85%,
+        #a72d55
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%);
+    filter: drop-shadow(2px 4px 4px rgba(0,0,0,.3));
+}
+
+.ribbon-tails::before {
+    left: 25px;
+    transform: rotate(12deg);
+}
+
+.ribbon-tails::after {
+    right: 25px;
+    transform: rotate(-12deg);
+}
+
+/* CENTER KNOT */
+.ribbon-knot {
+    position: absolute;
+    top: 354px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 32px;
+    z-index: 11;
+    border-radius: 45%;
+    background: radial-gradient(
+        circle at 30% 25%,
+        #fff5f8,
+        #f6a2bd 35%,
+        #cc3d6d 75%,
+        #861438
+    );
+    box-shadow:
+        inset 3px 3px 6px rgba(255,255,255,.7),
+        inset -3px -3px 6px rgba(80,0,25,.4),
+        0 4px 8px rgba(0,0,0,.35);
+}
+
+
+/* Name */
+.name {
+    margin-top: 15px;
+    color: #ffe0e9;
+    font-family: 'Great Vibes', cursive;
+    font-size: 68px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 10px;
+
+    text-shadow:
+        0 0 8px #ff9db8,
+        0 0 20px #ed5984,
+        0 0 40px #a91e4b;
+
+    animation: glowText 3s ease-in-out infinite alternate;
+}
+/* Floating hearts */
+.heart {
+    position: absolute;
+    color: #ff9ab7;
+    font-size: 20px;
+    animation: floatHeart 6s linear infinite;
+    opacity: 0;
+}
+
+.heart:nth-child(1) { left: 15%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 35%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 65%; animation-delay: 1s; }
+.heart:nth-child(4) { left: 85%; animation-delay: 3s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #ff739e; }
+    to { text-shadow: 0 0 30px #ff739e, 0 0 50px #e83e70; }
+}
+
+@keyframes floatHeart {
+    0% {
+        bottom: -30px;
+        opacity: 0;
+        transform: translateX(0) rotate(0);
+    }
+    20% { opacity: 0.8; }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(40px) rotate(360deg);
+    }
+}
+
+@media (max-width: 450px) {
+    .bouquet {
+        transform: scale(0.85);
+    }
+
+    .name {
+        font-size: 65px;
+    }
+}
+.messages {
+    text-align: center;
+    color: #fce5eb;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: .5px;
+    padding: 15px 20px;
+    max-width: 480px;
+    z-index: 6;
+    animation: fadeIn 3s ease;
+}
+
+.messages p {
+    margin: 6px 0;
+    text-shadow: 0 0 8px rgba(255, 115, 158, .45);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+@media (max-width: 500px) {
+    .bouquet {
+        transform: scale(.78);
+        margin: -35px 0;
+    }
+
+    .name {
+        font-size: 42px;
+        text-align: center;
+    }
+
+    .messages {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="heart" style="left:5%; animation-delay:0s;">♥</div>
+<div class="heart" style="left:15%; animation-delay:2s;">💗</div>
+<div class="heart" style="left:25%; animation-delay:4s;">♥</div>
+<div class="heart" style="left:40%; animation-delay:1s;">💕</div>
+<div class="heart" style="left:55%; animation-delay:3s;">♥</div>
+<div class="heart" style="left:70%; animation-delay:5s;">💗</div>
+<div class="heart" style="left:85%; animation-delay:2s;">♥</div>
+<div class="heart" style="left:95%; animation-delay:4s;">💕</div>
+
+<div class="bouquet">
+
+    <div class="roses">
+        <svg viewBox="0 0 300 250"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+                <radialGradient id="petal" cx="35%" cy="25%">
+                    <stop offset="0%" stop-color="#ffb3c5"/>
+                    <stop offset="35%" stop-color="#ed4169"/>
+                    <stop offset="75%" stop-color="#a50032"/>
+                    <stop offset="100%" stop-color="#570018"/>
+                </radialGradient>
+
+                <radialGradient id="innerPetal" cx="30%" cy="25%">
+                    <stop offset="0%" stop-color="#ff9db6"/>
+                    <stop offset="50%" stop-color="#e62958"/>
+                    <stop offset="100%" stop-color="#760020"/>
+                </radialGradient>
+
+                <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#83b86b"/>
+                    <stop offset="45%" stop-color="#286b36"/>
+                    <stop offset="100%" stop-color="#103b20"/>
+                </linearGradient>
+
+                <g id="rose">
+                    <!-- Outer petals -->
+                    <g fill="url(#petal)">
+                        <ellipse cx="0" cy="-17" rx="17" ry="25"/>
+                        <ellipse cx="16" cy="-7" rx="18" ry="24" transform="rotate(55 16 -7)"/>
+                        <ellipse cx="15" cy="13" rx="18" ry="24" transform="rotate(115 15 13)"/>
+                        <ellipse cx="-5" cy="18" rx="18" ry="24" transform="rotate(175 -5 18)"/>
+                        <ellipse cx="-18" cy="5" rx="18" ry="24" transform="rotate(235 -18 5)"/>
+                        <ellipse cx="-14" cy="-12" rx="18" ry="24" transform="rotate(300 -14 -12)"/>
+                    </g>
+
+                    <!-- Inner petals -->
+                    <g fill="url(#innerPetal)">
+                        <ellipse cx="0" cy="-8" rx="12" ry="17"/>
+                        <ellipse cx="10" cy="3" rx="12" ry="17" transform="rotate(65 10 3)"/>
+                        <ellipse cx="-9" cy="5" rx="12" ry="17" transform="rotate(-55 -9 5)"/>
+                    </g>
+
+                    <!-- Rose center -->
+                    <path d="M-5,-3 C-15,-15 7,-20 10,-7
+                             C17,4 -5,17 -10,5
+                             C-15,-3 0,-11 5,-3
+                             C9,2 -1,9 -4,3"
+                          fill="none"
+                          stroke="#7d0022"
+                          stroke-width="5"
+                          stroke-linecap="round"/>
+
+                    <path d="M-3,-2 Q5,-12 8,-4 Q10,3 1,6"
+                          fill="none"
+                          stroke="#ff9db4"
+                          stroke-width="2.5"
+                          stroke-linecap="round"/>
+                </g>
+            </defs>
+
+            <!-- Stems -->
+            <g fill="none" stroke="#245c32"
+               stroke-width="5" stroke-linecap="round">
+                <path d="M150 90 Q145 160 150 235"/>
+                <path d="M95 110 Q110 165 145 235"/>
+                <path d="M205 110 Q185 165 155 235"/>
+                <path d="M125 125 Q130 180 148 235"/>
+                <path d="M175 125 Q170 180 152 235"/>
+            </g>
+
+            <!-- Leaves -->
+            <g fill="url(#leaf)" stroke="#174326" stroke-width="1">
+                <path d="M135 155 Q85 105 70 140 Q95 175 135 155Z"/>
+                <path d="M165 155 Q215 105 230 140 Q205 175 165 155Z"/>
+                <path d="M135 190 Q80 160 85 195 Q110 215 135 190Z"/>
+                <path d="M165 190 Q220 160 215 195 Q190 215 165 190Z"/>
+                <path d="M148 130 Q115 95 108 120 Q125 145 148 130Z"/>
+                <path d="M152 130 Q185 95 192 120 Q175 145 152 130Z"/>
+            </g>
+
+            <!-- Leaf veins -->
+            <g fill="none" stroke="#a3c77c"
+               stroke-width="1.2" opacity=".65">
+                <path d="M135 155 L70 140"/>
+                <path d="M165 155 L230 140"/>
+                <path d="M135 190 L85 195"/>
+                <path d="M165 190 L215 195"/>
+            </g>
+
+            <!-- Five roses -->
+            <g class="rose-flower">
+                <use href="#rose" transform="translate(150 55) scale(1.15)"/>
+                <use href="#rose" transform="translate(90 95) scale(1.05)"/>
+                <use href="#rose" transform="translate(210 95) scale(1.05)"/>
+                <use href="#rose" transform="translate(120 145) scale(.9)"/>
+                <use href="#rose" transform="translate(180 145) scale(.9)"/>
+            </g>
+
+        </svg>
+    </div>
+
+<div class="bouquet">
+
+
+    <div class="roses">
+        <!-- Keep your existing rose SVG here -->
+    </div>
+
+        <div class="wrapper-layer"></div>
+    <div class="wrapper"></div>
+    <div class="ribbon-tails"></div>
+    <div class="ribbon"></div>
+    <div class="ribbon-tails"></div>
+<div class="ribbon"></div>
+<div class="ribbon-knot"></div>
+
+</div>
+</div>
+
+<div class="name"> Happy Anniversary Love! </div>
+
+<div class="messages">
+    <p>You are one of the most beautiful parts of my life. ❤️</p>
+    <p>Every flower reminds me of how special you are. 🌹</p>
+    <p>You make ordinary days feel magical.</p>
+    <p>May this little bouquet remind you how much you are appreciated.</p>
+    <p>Forever wishing you happiness and beautiful moments. 💗</p>
+</div>
+
+<canvas id="fireworks"></canvas>
+<script>
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+function createFirework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * (canvas.height * 0.55);
+    const colors = ["#ff7aa8", "#ffd166", "#ffffff", "#ff4d6d"];
+
+    for (let i = 0; i < 35; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 3 + 1;
+
+        particles.push({
+            x: x,
+            y: y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            life: 60,
+            color: colors[Math.floor(Math.random() * colors.length)]
+        });
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((p, index) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.025;
+        p.life--;
+
+        ctx.globalAlpha = Math.max(0, p.life / 60);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (p.life <= 0) {
+            particles.splice(index, 1);
+        }
+    });
+
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// Small fireworks every 1.5 seconds
+setInterval(createFirework, 1500);
+</script>
+</body>
+</html>
